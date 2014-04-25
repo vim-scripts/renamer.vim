@@ -195,7 +195,7 @@ let s:headerLineCount = len(s:header) + 2 " + 2 because of extra lines added lat
 if has('dos16')||has('dos32')||has('win16')||has('win32')||has('win64')||has('win32unix')||has('win95')
   " With info from http://support.grouplogic.com/?p=1607 and
   " http://en.wikipedia.org/wiki/Filename
-  let s:validChars = '[][a-zA-Z0-9`~!@#$%^&()_+={};'',. -]'
+  let s:validChars = '[^<>:"/\\|?*]'
   let s:separator = '[\\/]'
   let s:fileIllegalPatterns =  '\v( $)|(\.$)|(.{256})|^(com[1-9]|lpt[1-9]|con|nul|prn)$'
   let s:fileIllegalPatternsGuide = [ 'a space at the end of the filename', 'a period at the end of the filename', 'more than 255 characters', 'a prohibited filename for DOS/Windows']
